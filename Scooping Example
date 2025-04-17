@@ -1,0 +1,16 @@
+x = 10  # Global scope
+
+def outer_function():
+    y = 20  # Enclosing scope
+    
+    def inner_function():
+        z = 30  # Local scope
+        print("Inner function:", x, y, z)  # Can access all
+        
+    inner_function()
+    print("Outer function:", x, y)  # Can access x and y
+    # print(z)  # Would raise NameError - z is not accessible here
+
+outer_function()
+print("Global scope:", x)  # Can only access x
+# print(y)  # Would raise NameError - y is not accessible here
