@@ -1,0 +1,15 @@
+def countdown(n):
+    print(f"Entering countdown({n})")
+    
+    if n <= 0:
+        print("Base case reached")
+        print(f"Current namespace: {locals()}")
+        print("Leaving countdown(0)")
+        return
+    
+    print(f"Current namespace before recursion: {locals()}")
+    countdown(n - 1)
+    print(f"Current namespace after recursion: {locals()}")
+    print(f"Leaving countdown({n})")
+
+countdown(3)
